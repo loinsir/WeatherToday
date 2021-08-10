@@ -16,6 +16,7 @@
 		1947070C26C191AD0079AD59 /* WeatherTodayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1947070B26C191AD0079AD59 /* WeatherTodayUITests.swift */; };
 		1947071A26C299380079AD59 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1947071926C299380079AD59 /* Country.swift */; };
 		1947071C26C2B74E0079AD59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1947071B26C2B74D0079AD59 /* Assets.xcassets */; };
+		1947071E26C2C17F0079AD59 /* CityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1947071D26C2C17F0079AD59 /* CityListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		1947070D26C191AD0079AD59 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1947071926C299380079AD59 /* Country.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		1947071B26C2B74D0079AD59 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1947071D26C2C17F0079AD59 /* CityListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 				194706E926C191AC0079AD59 /* AppDelegate.swift */,
 				194706EB26C191AC0079AD59 /* SceneDelegate.swift */,
 				194706ED26C191AC0079AD59 /* ViewController.swift */,
+				1947071D26C2C17F0079AD59 /* CityListViewController.swift */,
 				194706EF26C191AC0079AD59 /* Main.storyboard */,
 				194706F426C191AD0079AD59 /* LaunchScreen.storyboard */,
 				1947071B26C2B74D0079AD59 /* Assets.xcassets */,
@@ -264,6 +267,7 @@
 				194706EE26C191AC0079AD59 /* ViewController.swift in Sources */,
 				194706EA26C191AC0079AD59 /* AppDelegate.swift in Sources */,
 				1947071A26C299380079AD59 /* Country.swift in Sources */,
+				1947071E26C2C17F0079AD59 /* CityListViewController.swift in Sources */,
 				194706EC26C191AC0079AD59 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

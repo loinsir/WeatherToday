@@ -35,9 +35,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.barTintColor = .systemBlue
-        self.navigationController?.navigationBar.topItem?.title = "세계 날씨"
-        self.view.backgroundColor = .white
+        self.title = "세계 날씨"
         self.addTableView()
         // Do any additional setup after loading the view.
         
@@ -55,8 +53,6 @@ class ViewController: UIViewController {
         
         self.tableView.reloadData()
     }
-
-
 }
 
 //    MARK: - UITableViewDataSource
@@ -75,7 +71,14 @@ extension ViewController: UITableViewDataSource {
         
         cell.textLabel?.text = self.countries[indexPath.row].koreanName
         cell.accessoryType = .disclosureIndicator
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cityListViewController: CityListViewController = CityListViewController()
+        cityListViewController.navigationBarTitle = self.countries[indexPath.row].koreanName
+        self.navigationController?.pushViewController(cityListViewController, animated: true)
     }
 }
 
