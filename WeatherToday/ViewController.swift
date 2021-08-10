@@ -72,7 +72,9 @@ extension ViewController: UITableViewDataSource {
         if let cellImage: UIImage = UIImage(named: flagName) {
             cell.imageView?.image = cellImage
         }
+        
         cell.textLabel?.text = self.countries[indexPath.row].koreanName
+        cell.accessoryType = .disclosureIndicator
         return cell
     }
 }
