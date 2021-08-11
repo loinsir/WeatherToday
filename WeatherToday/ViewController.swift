@@ -36,7 +36,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "세계 날씨"
-        self.addTableView()
         // Do any additional setup after loading the view.
         
         let jsonDecoder: JSONDecoder = JSONDecoder()
@@ -51,7 +50,7 @@ class ViewController: UIViewController {
             dump(error.localizedDescription)
         }
         
-        self.tableView.reloadData()
+        self.addTableView()
     }
 }
 
@@ -77,7 +76,8 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cityListViewController: CityListViewController = CityListViewController()
-        cityListViewController.navigationBarTitle = self.countries[indexPath.row].koreanName
+        cityListViewController.title = self.countries[indexPath.row].koreanName
+        cityListViewController.assetName = self.countries[indexPath.row].assetName
         self.navigationController?.pushViewController(cityListViewController, animated: true)
     }
 }

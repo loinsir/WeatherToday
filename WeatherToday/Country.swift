@@ -11,7 +11,7 @@ import Foundation
  {"korean_name":"한국",
   "asset_name":"kr"}
 */
-class Country: Codable {
+struct Country: Codable {
     let koreanName: String
     let assetName: String
     
