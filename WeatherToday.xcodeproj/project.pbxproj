@@ -20,6 +20,7 @@
 		1947072026C2DF380079AD59 /* CityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1947071F26C2DF380079AD59 /* CityTableViewCell.swift */; };
 		1947072226C2E14D0079AD59 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1947072126C2E14D0079AD59 /* WeatherData.swift */; };
 		1947072426C3E2A20079AD59 /* DetailWeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1947072326C3E2A20079AD59 /* DetailWeatherViewController.swift */; };
+		1947072626C412DB0079AD59 /* Simulator Screen Recording - iPhone 12 - 2021-08-11 at 23.13.57.gif in Resources */ = {isa = PBXBuildFile; fileRef = 1947072526C412DB0079AD59 /* Simulator Screen Recording - iPhone 12 - 2021-08-11 at 23.13.57.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		1947071F26C2DF380079AD59 /* CityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityTableViewCell.swift; sourceTree = "<group>"; };
 		1947072126C2E14D0079AD59 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		1947072326C3E2A20079AD59 /* DetailWeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWeatherViewController.swift; sourceTree = "<group>"; };
+		1947072526C412DB0079AD59 /* Simulator Screen Recording - iPhone 12 - 2021-08-11 at 23.13.57.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "Simulator Screen Recording - iPhone 12 - 2021-08-11 at 23.13.57.gif"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		194706DD26C191AC0079AD59 = {
 			isa = PBXGroup;
 			children = (
+				1947072526C412DB0079AD59 /* Simulator Screen Recording - iPhone 12 - 2021-08-11 at 23.13.57.gif */,
 				194706E826C191AC0079AD59 /* WeatherToday */,
 				194706FF26C191AD0079AD59 /* WeatherTodayTests */,
 				1947070A26C191AD0079AD59 /* WeatherTodayUITests */,
@@ -249,6 +252,7 @@
 				194706F626C191AD0079AD59 /* LaunchScreen.storyboard in Resources */,
 				1947071C26C2B74E0079AD59 /* Assets.xcassets in Resources */,
 				194706F126C191AC0079AD59 /* Main.storyboard in Resources */,
+				1947072626C412DB0079AD59 /* Simulator Screen Recording - iPhone 12 - 2021-08-11 at 23.13.57.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
