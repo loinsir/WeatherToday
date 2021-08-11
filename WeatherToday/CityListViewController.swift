@@ -107,12 +107,24 @@ extension CityListViewController: UITableViewDataSource {
             let celsius: Float = self.weatherDatas[indexPath.row].celsius
             let fahrenheit: Float = (celsius * 9 / 5) + 32              // Fahrenheit = (Celsius × 9/5) + 32
             let text: String = "섭씨 \(celsius)도 / 화씨 \(String.init(format: "%0.1f", fahrenheit))도"
+            if celsius < 10 {
+                cell.temperatureLabel.textColor = .systemBlue
+            } else if celsius > 25 {
+                cell.temperatureLabel.textColor = .systemRed
+            } else {
+                cell.temperatureLabel.textColor = .black
+            }
             return text
         }()
 
         let rainFallProbabilityText: String = {
             let probability: Int = self.weatherDatas[indexPath.row].rainfallProbability
             let text: String = "강수확률 \(probability)%"
+            if probability > 50 {
+                cell.rainFallProbabilityLabel.textColor = .systemYellow
+            } else {
+                cell.rainFallProbabilityLabel.textColor = .black
+            }
             return text
         }()
         
