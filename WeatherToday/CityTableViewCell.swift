@@ -16,13 +16,15 @@ class CityTableViewCell: UITableViewCell {
     let temperatureLabel: UILabel = UILabel()
     let rainFallProbabilityLabel: UILabel = UILabel()
     
+    var textLabelStack: UIStackView!
+    
     func addWeatherImageView()  {
         self.addSubview(self.weatherImageView)
         self.weatherImageView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             self.weatherImageView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            self.weatherImageView.centerXAnchor.constraint(equalTo: self.leadingAnchor, constant: 40)
+            self.weatherImageView.centerXAnchor.constraint(equalTo: self.leadingAnchor, constant: 45)
         ])
     }
     
@@ -40,7 +42,7 @@ class CityTableViewCell: UITableViewCell {
         
         NSLayoutConstraint.activate([
             textStackView.centerYAnchor.constraint(equalTo: self.centerYAnchor),
-            textStackView.leadingAnchor.constraint(equalTo: self.weatherImageView.trailingAnchor, constant: 15.0),
+            textStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 90.0)
         ])
         
     }
@@ -52,7 +54,7 @@ class CityTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     

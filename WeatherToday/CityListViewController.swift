@@ -106,7 +106,7 @@ extension CityListViewController: UITableViewDataSource {
         let temperatureString: String = {
             let celsius: Float = self.weatherDatas[indexPath.row].celsius
             let fahrenheit: Float = (celsius * 9 / 5) + 32              // Fahrenheit = (Celsius × 9/5) + 32
-            let text: String = "섭씨 \(celsius)도 / 화씨 \(fahrenheit)도"
+            let text: String = "섭씨 \(celsius)도 / 화씨 \(String.init(format: "%0.1f", fahrenheit))도"
             return text
         }()
 
