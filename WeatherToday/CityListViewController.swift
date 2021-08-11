@@ -49,7 +49,6 @@ class CityListViewController: UIViewController {
         
         do {
             self.weatherDatas = try jsonDecoder.decode([WeatherData].self, from: dataAsset.data)
-            print(self.weatherDatas)
         } catch  {
             print(error.localizedDescription)
         }
