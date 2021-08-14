@@ -79,58 +79,14 @@ extension CityListViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        let weatherImage: UIImage? = {
-            let state: Int = self.weatherDatas[indexPath.row].state
-            let imageName: String
-            switch state {
-                case 10:
-                    imageName = "sunny"
-                case 11:
-                    imageName = "cloudy"
-                case 12:
-                    imageName = "rainy"
-                case 13:
-                    imageName = "snowy"
-                default:
-                    imageName = "sunny"
-            }
-            guard let image: UIImage = UIImage(named: imageName) else {
-                return nil
-            }
-            return image
-        }()
+        let weatherImage: UIImage? = getWeatherImageByIndexPath(indexPath: indexPath)
+        cell.weatherImageView.image = weatherImage
         
         let cityTitle: String = self.weatherDatas[indexPath.row].cityName
-
-        let temperatureText: String = {
-            let celsius: Float = self.weatherDatas[indexPath.row].celsius
-            let fahrenheit: Float = (celsius * 9 / 5) + 32              // Fahrenheit = (Celsius × 9/5) + 32
-            let text: String = "섭씨 \(celsius)도 / 화씨 \(String.init(format: "%0.1f", fahrenheit))도"
-            if celsius < 10 {
-                cell.temperatureLabel.textColor = .systemBlue
-            } else if celsius > 25 {
-                cell.temperatureLabel.textColor = .systemRed
-            } else {
-                cell.temperatureLabel.textColor = .black
-            }
-            return text
-        }()
-
-        let rainFallProbabilityText: String = {
-            let probability: Int = self.weatherDatas[indexPath.row].rainfallProbability
-            let text: String = "강수확률 \(probability)%"
-            if probability > 50 {
-                cell.rainFallProbabilityLabel.textColor = .systemYellow
-            } else {
-                cell.rainFallProbabilityLabel.textColor = .black
-            }
-            return text
-        }()
-        
-        cell.weatherImageView.image = weatherImage
         cell.cityTitleLabel.text = cityTitle
-        cell.temperatureLabel.text = temperatureText
-        cell.rainFallProbabilityLabel.text = rainFallProbabilityText
+
+        setTemperatureLabelByIndexPath(view: cell, indexPath: indexPath)
+        setRainFallProbabilityLabelByIndexPath(view: cell, indexPath: indexPath)
         
         cell.accessoryType = .disclosureIndicator
         
@@ -147,61 +103,65 @@ extension CityListViewController: UITableViewDataSource {
             let cityName: String = self.weatherDatas[indexPath.row].cityName
             viewController.title = cityName
             
-            let weatherImage: UIImage? = {
-                let state: Int = self.weatherDatas[indexPath.row].state
-                let imageName: String
-                switch state {
-                    case 10:
-                        imageName = "sunny"
-                    case 11:
-                        imageName = "cloudy"
-                    case 12:
-                        imageName = "rainy"
-                    case 13:
-                        imageName = "snowy"
-                    default:
-                        imageName = "sunny"
-                }
-                guard let image: UIImage = UIImage(named: imageName) else {
-                    return nil
-                }
-
-                return image
-            }()
+            let weatherImage: UIImage? = self.getWeatherImageByIndexPath(indexPath: indexPath)
             
             viewController.weatherImageView.image = weatherImage
             viewController.cityTitleLabel.text = cityName
             
-            let temperatureText: String = {
-                let celsius: Float = self.weatherDatas[indexPath.row].celsius
-                let fahrenheit: Float = (celsius * 9 / 5) + 32              // Fahrenheit = (Celsius × 9/5) + 32
-                let text: String = "섭씨 \(celsius)도 / 화씨 \(String.init(format: "%0.1f", fahrenheit))도"
-                if celsius < 10 {
-                    viewController.temperatureLabel.textColor = .systemBlue
-                } else if celsius > 25 {
-                    viewController.temperatureLabel.textColor = .systemRed
-                } else {
-                    viewController.temperatureLabel.textColor = .black
-                }
-                return text
-            }()
-            viewController.temperatureLabel.text = temperatureText
-            
-            let rainFallProbabilityText: String = {
-                let probability: Int = self.weatherDatas[indexPath.row].rainfallProbability
-                let text: String = "강수확률 \(probability)%"
-                if probability > 50 {
-                    viewController.rainFallProbabilityLabel.textColor = .systemYellow
-                } else {
-                    viewController.rainFallProbabilityLabel.textColor = .black
-                }
-                return text
-            }()
-            viewController.rainFallProbabilityLabel.text = rainFallProbabilityText
+            setTemperatureLabelByIndexPath(view: viewController, indexPath: indexPath)
+            setRainFallProbabilityLabelByIndexPath(view: viewController, indexPath: indexPath)
             
             return viewController
         }()
         self.navigationController?.pushViewController(detailWeatherViewController, animated: true)
+    }
+    
+    // MARK: - Set Weather Views By IndexPath
+    func getWeatherImageByIndexPath(indexPath: IndexPath) -> UIImage? {
+        let state: Int = self.weatherDatas[indexPath.row].state
+        let imageName: String
+        switch state {
+            case 10:
+                imageName = "sunny"
+            case 11:
+                imageName = "cloudy"
+            case 12:
+                imageName = "rainy"
+            case 13:
+                imageName = "snowy"
+            default:
+                imageName = "sunny"
+        }
+        guard let image: UIImage = UIImage(named: imageName) else {
+            return nil
+        }
+
+        return image
+    }
+    
+    func setTemperatureLabelByIndexPath(view: WeatherDataView, indexPath: IndexPath) {
+        let celsius: Float = self.weatherDatas[indexPath.row].celsius
+        let fahrenheit: Float = (celsius * 9 / 5) + 32              // Fahrenheit = (Celsius × 9/5) + 32
+        let text: String = "섭씨 \(celsius)도 / 화씨 \(String.init(format: "%0.1f", fahrenheit))도"
+        if celsius < 10 {
+            view.temperatureLabel.textColor = .systemBlue
+        } else if celsius > 25 {
+            view.temperatureLabel.textColor = .systemRed
+        } else {
+            view.temperatureLabel.textColor = .black
+        }
+        view.temperatureLabel.text = text
+    }
+    
+    func setRainFallProbabilityLabelByIndexPath(view: WeatherDataView, indexPath: IndexPath) {
+        let probability: Int = self.weatherDatas[indexPath.row].rainfallProbability
+        let text: String = "강수확률 \(probability)%"
+        if probability > 50 {
+            view.rainFallProbabilityLabel.textColor = .systemYellow
+        } else {
+            view.rainFallProbabilityLabel.textColor = .black
+        }
+        view.rainFallProbabilityLabel.text = text
     }
 
 }

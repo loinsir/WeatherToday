@@ -7,14 +7,14 @@
 
 import UIKit
 
-class CityTableViewCell: UITableViewCell {
+class CityTableViewCell: UITableViewCell, WeatherDataView {
     
     static let cellIdentifier: String = "cityTableViewCell"
     
-    let weatherImageView: UIImageView = UIImageView()
-    let cityTitleLabel: UILabel = UILabel()
-    let temperatureLabel: UILabel = UILabel()
-    let rainFallProbabilityLabel: UILabel = UILabel()
+    var weatherImageView: UIImageView = UIImageView()
+    var cityTitleLabel: UILabel = UILabel()
+    var temperatureLabel: UILabel = UILabel()
+    var rainFallProbabilityLabel: UILabel = UILabel()
     
     var textLabelStack: UIStackView!
     

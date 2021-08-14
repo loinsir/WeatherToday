@@ -7,12 +7,12 @@
 
 import UIKit
 
-class DetailWeatherViewController: UIViewController {
+class DetailWeatherViewController: UIViewController, WeatherDataView {
     
-    let weatherImageView: UIImageView = UIImageView()
-    let cityTitleLabel: UILabel = UILabel()
-    let temperatureLabel: UILabel = UILabel()
-    let rainFallProbabilityLabel: UILabel = UILabel()
+    var weatherImageView: UIImageView = UIImageView()
+    var cityTitleLabel: UILabel = UILabel()
+    var temperatureLabel: UILabel = UILabel()
+    var rainFallProbabilityLabel: UILabel = UILabel()
     
     func layoutWeatherImageView() {
         self.weatherImageView.contentMode = .scaleAspectFill

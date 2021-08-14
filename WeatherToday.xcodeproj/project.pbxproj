@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1940478526C75B9F0049059D /* WeatherDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1940478426C75B9F0049059D /* WeatherDataView.swift */; };
 		194706EA26C191AC0079AD59 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194706E926C191AC0079AD59 /* AppDelegate.swift */; };
 		194706EC26C191AC0079AD59 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194706EB26C191AC0079AD59 /* SceneDelegate.swift */; };
 		194706EE26C191AC0079AD59 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194706ED26C191AC0079AD59 /* ViewController.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1940478426C75B9F0049059D /* WeatherDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WeatherDataView.swift; path = ../WeatherDataView.swift; sourceTree = "<group>"; };
 		194706E626C191AC0079AD59 /* WeatherToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		194706E926C191AC0079AD59 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		194706EB26C191AC0079AD59 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +114,7 @@
 		194706E826C191AC0079AD59 /* WeatherToday */ = {
 			isa = PBXGroup;
 			children = (
+				1940478426C75B9F0049059D /* WeatherDataView.swift */,
 				194706E926C191AC0079AD59 /* AppDelegate.swift */,
 				194706EB26C191AC0079AD59 /* SceneDelegate.swift */,
 				194706ED26C191AC0079AD59 /* ViewController.swift */,
@@ -281,6 +284,7 @@
 				194706EA26C191AC0079AD59 /* AppDelegate.swift in Sources */,
 				1947072426C3E2A20079AD59 /* DetailWeatherViewController.swift in Sources */,
 				1947071A26C299380079AD59 /* Country.swift in Sources */,
+				1940478526C75B9F0049059D /* WeatherDataView.swift in Sources */,
 				1947071E26C2C17F0079AD59 /* CityListViewController.swift in Sources */,
 				1947072026C2DF380079AD59 /* CityTableViewCell.swift in Sources */,
 				194706EC26C191AC0079AD59 /* SceneDelegate.swift in Sources */,
